@@ -232,9 +232,10 @@ p:last-child { margin-bottom: 0; }
 .section-dark .section-desc { color: rgba(245,242,234,0.68); }
 
 /* About */
-.section-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(32px, 6vw, 90px); align-items: start; }
+.section-grid { display: grid; grid-template-columns: 0.7fr 0.9fr 0.7fr; gap: clamp(28px, 5vw, 56px); align-items: start; }
 .section-grid .section-head { margin-bottom: 0; }
 .lede { font-size: 1.15rem; font-weight: 500; }
+.about-media img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius); border: 2px solid var(--ink); }
 .about-tags { list-style: none; padding: 0; margin: 26px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .about-tags li {
   font-size: 0.84rem; font-weight: 700;
@@ -244,6 +245,11 @@ p:last-child { margin-bottom: 0; }
 /* ============================================================
    Gallery (real photography)
    ============================================================ */
+.gallery-banner {
+  margin: 0 0 18px; position: relative;
+  border-radius: var(--radius); overflow: hidden; border: 2px solid var(--ink);
+}
+.gallery-banner img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -254,9 +260,8 @@ p:last-child { margin-bottom: 0; }
   margin: 0; position: relative;
   border-radius: var(--radius); overflow: hidden; border: 2px solid var(--ink);
 }
-.gallery-tile--wide { grid-column: span 2; grid-row: span 2; }
 .gallery-tile img { width: 100%; height: 100%; object-fit: cover; }
-.gallery-tile figcaption {
+.gallery-banner figcaption, .gallery-tile figcaption {
   position: absolute; left: 14px; bottom: 12px;
   background: var(--ink); color: var(--paper);
   font-size: 0.76rem; font-weight: 700;
@@ -277,6 +282,7 @@ p:last-child { margin-bottom: 0; }
 }
 .room-card:hover { transform: translateY(-6px); box-shadow: 8px 10px 0 rgba(255,203,61,0.9); }
 .room-media { position: relative; aspect-ratio: 4 / 3; border-bottom: 2px solid var(--ink); }
+.room-media img { width: 100%; height: 100%; object-fit: cover; }
 .media-tag {
   position: absolute; left: 16px; bottom: 16px;
   background: var(--ink); color: var(--paper);
@@ -294,6 +300,10 @@ p:last-child { margin-bottom: 0; }
 .room-link { font-weight: 800; border-bottom: 3px solid var(--yellow); padding-bottom: 2px; }
 .room-note { margin-top: 30px; font-size: 0.85rem; color: rgba(245,242,234,0.55); text-align: center; }
 .section-dark .room-note { color: rgba(245,242,234,0.55); }
+.room-strip-head { margin-top: 56px; margin-bottom: 20px; }
+.room-strip-head h3 { font-size: 1.15rem; font-weight: 800; }
+.style-card { margin: 0; width: 220px; flex-shrink: 0; border-radius: var(--radius); overflow: hidden; border: 2px solid rgba(245,242,234,0.16); }
+.style-card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 
 /* ============================================================
    Amenities
@@ -469,7 +479,7 @@ p:last-child { margin-bottom: 0; }
   .breakfast-badge { display: none; }
   .feature-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
-  .gallery-tile--wide { grid-column: span 2; grid-row: span 1; }
+  .gallery-banner img { aspect-ratio: 16 / 9; }
 
   .mobile-booking-bar { display: block; }
   body { padding-bottom: 58px; }
@@ -481,5 +491,5 @@ p:last-child { margin-bottom: 0; }
   .header-actions .btn-primary { padding: 9px 16px; font-size: 0.82rem; }
   .hero-stats { gap: 24px; }
   .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
-  .gallery-tile--wide { grid-column: span 1; }
+  .gallery-banner img { aspect-ratio: 4 / 3; }
 }
