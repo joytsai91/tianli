@@ -10,20 +10,25 @@
     return document.querySelector(link.getAttribute("href"));
   }).filter(Boolean);
 
-  /* Header background + back-to-top on scroll */
+  /* Back-to-top visibility on scroll */
   function onScroll() {
-    var scrolled = window.scrollY > 40;
-    header.classList.toggle("is-scrolled", scrolled);
     toTopBtn.classList.toggle("is-visible", window.scrollY > 600);
   }
   document.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
   /* Mobile nav toggle */
+  function positionMobileNav() {
+    mainNav.style.top = header.getBoundingClientRect().bottom + "px";
+  }
   navToggle.addEventListener("click", function () {
     var isOpen = header.classList.toggle("nav-open");
     navToggle.classList.toggle("is-open", isOpen);
     navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    if (isOpen) positionMobileNav();
+  });
+  window.addEventListener("resize", function () {
+    if (header.classList.contains("nav-open")) positionMobileNav();
   });
 
   navLinks.forEach(function (link) {
