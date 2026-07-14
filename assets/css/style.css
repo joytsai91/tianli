@@ -267,6 +267,13 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.76rem; font-weight: 700;
   padding: 5px 12px; border-radius: 999px;
 }
+.mascot-callout {
+  margin: 24px 0 0; display: flex; align-items: center; gap: 22px;
+  background: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius);
+  padding: 20px 26px;
+}
+.mascot-callout img { width: 84px; height: 84px; border-radius: 14px; flex-shrink: 0; object-fit: cover; }
+.mascot-callout p { font-size: 0.92rem; font-weight: 500; color: rgba(17,17,17,0.75); margin: 0; }
 
 /* ============================================================
    Rooms
